@@ -30,7 +30,7 @@
 <body>
     <div>
         <h3>Enter integar search key</h3>
-        <input type="text" class="inpNo" id="inpNo"><button onclick="chkNo();">Search</button>
+        <input type="text" class="inpNo" id="inpNo"><button id="mybtn" onclick="chkNo();">Search</button>
         <br><br>
         <h3>Result</h3>
         <input type="text" class="result" id="result" onfocus="this.blur();" value=" ">
@@ -49,5 +49,13 @@
                 document.getElementById("result").value = "The value doesn't exist in the array";
             }
         }
+        // for pressing enter
+        var input = document.getElementById("inpNo");
+        input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("mybtn").click();
+        }
+        });
     </script>
 </html>
